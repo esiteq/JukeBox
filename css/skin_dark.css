@@ -1,0 +1,23 @@
+body {
+background-image: url(../images/bo_play_pattern.png);
+color:white;
+}
+select {
+background-image: url(../images/fake_brick.png);
+}
+option[selected] {
+background:red !important;
+}
+.title-table th {
+color:red;
+}
+#total-playlist {
+color:yellow;
+}
+#total-coins {
+color:yellow;
+}
+
+a.version-link {
+color:yellow !important;
+}

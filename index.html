@@ -1,0 +1,158 @@
+﻿<!DOCTYPE HTML>
+<html>
+<!--
+JukeBox v1.0
+Author: Alex Raven
+URL: http://www.esiteq.com/projects/JukeBox/
+-->
+<head>
+    <meta http-equiv="content-type" content="text/html" />
+    <meta name="author" content="Alex Raven" />
+    <meta charset="UTF-8" />
+    <script src="js/jquery-3.0.0.min.js"></script> 
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/fonts.css" />
+    <script src="js/notify.min.js"></script>
+    <script src="js/rainbow.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jukebox.js"></script>
+    <!--
+    <script src="http://www.youtube.com/player_api"></script>
+    -->
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/skin_dark.css" />
+    <link rel="icon" href="/favicon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/images/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+	<title>Juke Box</title>
+</head>
+
+<body>
+
+<div id="loading-layer">
+    <div id="loading-box">
+        <div id="loading-msg">Загрузка... Пожалуйста, подождите!</div>
+    </div>
+</div>
+
+<!--
+<div id="youtube-player" style="width: 100%; height:100%; position:absolute; top:0; left:0; z-index:999;"></div>
+<script>
+var player;
+function onYouTubePlayerAPIReady()
+{
+    player = new YT.Player('youtube-player',
+    {
+        height: '390',
+        width: '640',
+        videoId: '0mFFFc_oyBo',
+        events:
+        {
+            'onReady': onPlayerReady,
+            'onStateChange': onPlayerStateChange
+        }
+    });
+}
+// autoplay video
+function onPlayerReady(event)
+{
+    event.target.playVideo();
+}
+// when video ends
+function onPlayerStateChange(event)
+{        
+    if(event.data === 0)
+    {          
+        alert('done');
+    }
+}
+</script>
+-->
+
+<div class="container-fluid">
+    <div class="row" id="top-row">
+        <div class="col-sm-12 text-center cnt-box">
+            <table class="title-table" id="main-title">
+                <tr>
+                    <th id="the-title">Музыкальный автомат</th>
+                </tr>
+                <tr>
+                    <td class="version-info">Версия 1.0 <span class="sep">|</span> <a class="version-link" href="http://github.com/esiteq/JukeBox">http://github.com/esiteq/JukeBox</a></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <div class="row" id="main-row">
+        <div class="col-sm-6 text-center cnt-box" id="albums-box">
+            <table class="title-table" id="albums-title">
+                <tr>
+                    <th class="text-center">Альбомы</th>
+                </tr>
+            </table>
+            <div id="albums-outer">
+                <select id="albums-select" size="10">
+                </select>
+            </div>
+        </div>
+        <div class="col-sm-6 text-center cnt-box" id="songs-box">
+            <table class="title-table" id="songs-title">
+                <tr>
+                    <th class="text-center">Песни</th>
+                </tr>
+            </table>
+            <div id="songs-outer">
+                <select id="songs-select" size="10">
+                </select>
+            </div>
+        </div>
+    </div>
+    <div class="row" id="bottom-row">
+        <div class="col-sm-6 text-center cnt-box" id="playlist-box">
+            <table class="title-table" id="playlist-title">
+                <tr>
+                    <th>Добавлено: <span id="total-playlist">0</span> (<span id="total-playlist-time">0:00</span>)</th>
+                    <th class="text-right">Монеток: <span id="total-coins">0</span></th>
+                </tr>
+            </table>
+            <div id="playlist-outer">
+                <select id="playlist-select" size="10">
+                </select>
+            </div>
+        </div>
+        <div class="col-sm-6 text-center cnt-box" id="stats-box">
+            <div id="stats-outer">
+                <table class="title-table" id="stats-title">
+                    <tr>
+                        <th class="text-center">Статистика</th>
+                    </tr>
+                </table>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <p class="stats-row stats-first"><span id="stats-current">&nbsp;</span></p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <p class="stats-row">
+                            <div class="progress">
+                                <div class="progress-bar" id="play-progress" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width:0%">
+                                    <span class="sr-only" id="current-time">0:00</span>
+                                </div>
+                            </div>
+                        </p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <p class="stats-row">
+                            <span id="time-playing">0:00</span> / <span id="time-total">0:00</span>                    
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
