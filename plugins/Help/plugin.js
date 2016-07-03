@@ -4,7 +4,9 @@ Version: 1.0
 Author: Alex Raven
 URL: http://www.esiteq.com/projects/JukeBox/
 */
-//
+
+console.log('Help plugin loaded');
+
 document.addEventListener('jbAfterPlayPlaylist', function()
 {
     $('#help-outer').addClass('hide');
@@ -15,7 +17,6 @@ document.addEventListener('jbAfterPlayPlaylist', function()
 //jb_plugins.Help.jbAfterInit = window.jbAfterInit;
 document.addEventListener('jbAfterInit', function()
 {
-    console.log(window.jb);
     var _help = `
 <div id="help-outer">
 <table class="title-table" id="help-title">
@@ -32,25 +33,25 @@ document.addEventListener('jbAfterInit', function()
 </div>
 </div>
 <div class="row">
-<div class="col-sm-1 text-right">&laquo;q&raquo;</div>
+<div class="col-sm-1 text-right">&laquo;`+jb.album_up+`&raquo;</div>
 <div class="col-sm-5">Предыдущий альбом</div>
-<div class="col-sm-1 text-right">&laquo;a&raquo;</div>
+<div class="col-sm-1 text-right">&laquo;`+jb.album_down+`&raquo;</div>
 <div class="col-sm-5">Следующий альбом</div>
 </div>
 <div class="row">
-<div class="col-sm-1 text-right">&laquo;p&raquo;</div>
+<div class="col-sm-1 text-right">&laquo;`+jb.song_up+`&raquo;</div>
 <div class="col-sm-5">Предыдущая песня</div>
-<div class="col-sm-1 text-right">&laquo;l&raquo;</div>
+<div class="col-sm-1 text-right">&laquo;`+jb.song_down+`&raquo;</div>
 <div class="col-sm-5">Следующая песня</div>                    
 </div>
 <div class="row">
-<div class="col-sm-1 text-right">&laquo;Пробел&raquo;</div>
+<div class="col-sm-1 text-right">&laquo;`+jb.song_select+`&raquo;</div>
 <div class="col-sm-5">Выбор песни</div>
-<div class="col-sm-1 text-right">&laquo;+&raquo;</div>
+<div class="col-sm-1 text-right">&laquo;`+jb.coin_insert+`&raquo;</div>
 <div class="col-sm-5">Подкинуть монет</div>                    
 </div>
 <div class="row">
-<div class="col-sm-1 text-right">&laquo;]&raquo;</div>
+<div class="col-sm-1 text-right">&laquo;`+jb.song_next+`&raquo;</div>
 <div class="col-sm-5">Пропустить песню</div>
 </div>
 </div>
