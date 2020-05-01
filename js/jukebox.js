@@ -1,7 +1,7 @@
 ﻿/*
-JukeBox v1.0
-Author: Alex Raven
-URL: http://www.esiteq.com/projects/JukeBox/
+JukeBox v1.1
+Author: Alex Bugrov
+URL: https://github.com/esiteq/JukeBox/
 */
 
 var JukeBox = function()
